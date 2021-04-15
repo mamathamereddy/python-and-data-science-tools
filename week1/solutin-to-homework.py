@@ -25,7 +25,7 @@ print(f'updated dict:{dict}')
 
 # 5. Write a Python program to calculate body mass index.
 def calculate_BMI(height, weight):
-    return round(weight / (height * height), 2)
+    return round(weight / height ** 2)
 
 height = float(input("Input your height (meters): "))
 weight = float(input("Input your weight( Kgs): "))
@@ -54,11 +54,8 @@ tuple_with_different_data_types= (1, 5.23, "Hello", False, ["apple", "banana", "
 
 # 8. Create a list of 5 city names and convert it into tuples.
 
-def convertotuple(list):
-    return tuple(list)
-
 city_names = ['copenhagen', 'Norway', 'sweden', 'Hyderabad', 'Mumbai']
-tuplelist_of_cities = convertotuple(city_names)
+tuplelist_of_cities = tuple(city_names)
 
 print(f'City names as tuple:{tuplelist_of_cities}')
 
@@ -73,11 +70,10 @@ print(f'List after Removing duplicates:{a}')
 # 10. Accept a string from user and remove the characters which have odd index values of a given string and print them.
 def remove_odd_string(str):
     final_str = ""
-    for i in range(len(str)):
+    for i, sample_char in enumerate(str):
         if i % 2 == 0:
-            final_str = final_str + str[i]
+            final_str +=sample_char
     return final_str
-
 
 string = input("enter a string:")
 print("characters which have odd index values of a given string are :", remove_odd_string(string))
