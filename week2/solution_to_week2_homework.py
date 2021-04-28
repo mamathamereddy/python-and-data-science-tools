@@ -49,14 +49,20 @@ myjet.jet_Info()
 # Dictionary Initialisation
 My_Dict = {'1':'Joy', '2':'John', '3':'Joye', '4':'Jiya'}
 
-My_key = input("Enter the key(integer) to be searched: ")
+for key, value in My_Dict.items():
+    print(key, value)
 
-try:
-    My_Dict[My_key]
-except KeyError:
-    print("Key doesn't exist!")
-else:
-    print("Key exists!")
+
+def guess_key(input_key):
+    if input_key in My_Dict:
+        print(f'key entered -  {input_key}  is found')
+    else:
+        print(" No  key found!")
+
+
+user_key = input("which key do you want to guess?\n")
+print('user_key ', user_key)
+guess_key(user_key)
 
 #6.Write a function called showNumbers that takes a parameter called limit.
 # It should print all the numbers between 0 and limit with a label to identify the even and odd numbers.
